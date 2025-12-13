@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 4 — Probability Distributions | Bronco's Astrostats Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 0.8rem;
+      overflow-x: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1a73e8;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Bronco's Astrostats Guidance Website</h1>
+    <p>Chapter 4 — Probability Distributions</p>
+  </header>
+
+  <main>
+
+    <p>
+      Probability distributions describe how values of a measurement are spread.
+      Instead of focusing on a single observation, distributions describe what
+      happens when the same measurement is repeated many times.
+    </p>
+
+    <p>
+      In astronomy, distributions are used to model photon counts, measurement
+      errors, detection results, and similar quantities.
+    </p>
+
+    <p>
+      A distribution is a model. It does not describe reality exactly, but it
+      captures the main behavior of the data.
+    </p>
+
+    <h2>Discrete and continuous measurements</h2>
+    <p>
+      Some measurements take only whole-number values, such as the number of
+      photons detected or the result of repeated detection attempts. These are
+      described using discrete probability distributions.
+    </p>
+
+    <p>
+      Other measurements vary smoothly over a range of values, such as brightness
+      or distance. These are described using continuous probability distributions.
+    </p>
+
+    <p>
+      The type of measurement determines which distribution is appropriate.
+    </p>
+
+    <h2>The binomial distribution</h2>
+    <p>
+      The binomial distribution is used when a measurement is repeated a fixed
+      number of times, and each repetition has only two possible outcomes.
+    </p>
+
+    <p>
+      Examples include detection versus non-detection.
+    </p>
+
+    <p>
+      The probability of observing exactly k successes is
+    </p>
+
+    <pre>
+P(k) = ( n choose k ) p^k (1 − p)^(n − k)
+
+( n choose k ) = n! / [ k! (n − k)! ]
+    </pre>
+
+    <h2>The Poisson distribution</h2>
+    <p>
+      The Poisson distribution describes how many times something happens within
+      a fixed interval.
+    </p>
+
+    <p>
+      In astronomy, it is often used to model photon counts during an exposure.
+    </p>
+
+    <p>
+      The probability of observing k occurrences is
+    </p>
+
+    <pre>
+P(k) = ( λ^k e^(−λ) ) / k!
+    </pre>
+
+    <p>
+      This distribution is commonly used when occurrences are independent and
+      happen at a constant average rate.
+    </p>
+
+    <h2>The normal distribution</h2>
+    <p>
+      The normal distribution, also called the Gaussian distribution, is often
+      used to describe measurement errors.
+    </p>
+
+    <p>
+      It appears when many small effects contribute to uncertainty.
+    </p>
+
+    <p>
+      The probability density function is
+    </p>
+
+    <pre>
+f(x) = (1 / (σ √(2π))) exp[ − (x − μ)² / (2σ²) ]
+    </pre>
+
+    <p>
+      The normal distribution is symmetric around its center.
+    </p>
+
+    <h2>Comparing the distributions</h2>
+    <p>
+      The binomial distribution is used when the number of trials is fixed and
+      outcomes are limited to two possibilities.
+    </p>
+
+    <p>
+      The Poisson distribution is used when counting how many times something
+      occurs in a fixed interval.
+    </p>
+
+    <p>
+      The normal distribution is used for continuous measurements.
+    </p>
+
+    <p>
+      <a href="index.html">← Back to Home</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Astrostats Guide</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
