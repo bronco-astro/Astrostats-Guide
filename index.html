@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semester Summary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 0.75rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: #1a73e8;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Semester Summary Website</h1>
+    <p>Modern Statistical Methods for Astronomy</p>
+  </header>
+
+  <main>
+    <h2>Course Chapters</h2>
+    <p>
+      This website summarizes the material covered during the semester.
+      Click on a chapter below to view a detailed explanation of concepts
+      and techniques.
+    </p>
+
+    <ul>
+      <li><a href="chapter2.html">Chapter 2 — Probability Concepts</a></li>
+      <li><a href="chapter4.html">Chapter 4 — Probability Distributions</a></li>
+      <li><a href="chapter5.html">Chapter 5 — Nonparametric Statistics</a></li>
+      <li><a href="chapter7.html">Chapter 7 — Regression</a></li>
+      <li><a href="chapter6.html">Chapter 6 — Data Smoothing & Density Estimation</a></li>
+      <li><a href="chapter8.html">Chapter 8 — Multivariate Analysis</a></li>
+      <li><a href="chapter11.html">Chapter 11 — Time Series Analysis</a></li>
+      <li><a href="chapter9.html">Chapter 9 — Clustering & Classification</a></li>
+      <li><a href="chapter10.html">Chapter 10 — Censored & Truncated Data</a></li>
+      <li><a href="chapter12.html">Chapter 12 — Spatial Point Processes</a></li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Semester Summary</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
