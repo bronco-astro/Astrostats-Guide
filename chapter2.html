@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Chapter 2 — Probability Concepts</title>
+  <title>Chapter 2 — Probability Concepts | Bronco's Astrostats Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      line-height: 1.7;
+      line-height: 1.6;
       background-color: #f9f9f9;
     }
 
@@ -21,29 +21,26 @@
     }
 
     main {
-      max-width: 900px;
+      max-width: 800px;
       margin: auto;
       padding: 2rem 1rem;
-      background-color: white;
     }
 
     h2 {
       margin-top: 2rem;
-      color: #222;
-    }
-
-    h3 {
-      margin-top: 1.5rem;
-      color: #444;
     }
 
     p {
-      margin: 0.75rem 0;
+      margin: 1rem 0;
+    }
+
+    ul {
+      margin-left: 1.2rem;
     }
 
     a {
-      color: #1a73e8;
       text-decoration: none;
+      color: #1a73e8;
     }
 
     a:hover {
@@ -58,114 +55,135 @@
       margin-top: 3rem;
       font-size: 0.9rem;
     }
-
-    .back {
-      margin-bottom: 1.5rem;
-      display: inline-block;
-    }
   </style>
 </head>
 
 <body>
 
   <header>
-    <h1>Chapter 2 — Probability Concepts</h1>
-    <p>Modern Statistical Methods for Astronomy</p>
+    <h1>Bronco's Astrostats Guidance Website</h1>
+    <p>Chapter 2 — Probability Concepts</p>
   </header>
 
   <main>
 
-    <a class="back" href="index.html">← Back to Home</a>
-
-    <h2>Overview</h2>
     <p>
-      This chapter introduces probability as a mathematical framework for
-      describing uncertainty in astronomical observations. Even when physical
-      laws are deterministic, limited measurements and noise make outcomes
-      uncertain.
-    </p>
-
-    <h2>Uncertainty in Observational Science</h2>
-    <p>
-      The textbook emphasizes that probability theory models uncertainty.
-      Astronomers cannot observe all properties of a system perfectly, and
-      measurements are affected by instrumental limitations and noise.
+      Probability is used to describe uncertainty in astronomy and physics.
+      Most measurements are not exact. Instruments have limits, observations
+      are incomplete, and noise is always present. Because of this, probability
+      is used to describe what is known and how uncertain that knowledge is.
     </p>
 
     <p>
-      As a result, probability is used to quantify how uncertain our knowledge
-      is, rather than assuming measurements are exact.
+      Even when a physical process follows strict laws, the outcome is treated
+      as uncertain if all controlling factors cannot be measured. For example,
+      photon counts from a telescope follow physical laws, but the exact number
+      detected during an observation cannot be predicted ahead of time.
     </p>
 
-    <h2>Experiments, Outcome Spaces, and Events</h2>
-
-    <h3>Experiments</h3>
+    <h2>Uncertainty and observations</h2>
     <p>
-      An experiment is any process whose outcome cannot be predicted with
-      certainty before it occurs. Examples include counting photons detected
-      by a telescope or measuring a star’s radial velocity.
+      Astronomical data always contain uncertainty. This uncertainty can come
+      from measurement errors, limited observing time, or physical processes
+      that cannot be fully observed.
     </p>
 
-    <h3>Outcome Space</h3>
     <p>
-      The outcome space is the set of all possible outcomes of an experiment.
-      For example, photon counting experiments may have outcomes
-      {0, 1, 2, 3, …}.
+      Probability does not describe randomness in nature itself. It describes
+      uncertainty in human knowledge. A situation may be deterministic in
+      principle, but uncertain in practice.
     </p>
 
-    <h3>Events</h3>
+    <h2>Probability rules</h2>
     <p>
-      An event is a subset of the outcome space, such as measuring a value
-      above a certain threshold.
+      Probability values follow a few basic rules. Probability values are never
+      negative. The total probability over all possible outcomes equals one.
+      When outcomes cannot occur together, their probabilities add.
     </p>
 
-    <h2>Axioms of Probability</h2>
-    <p>The book introduces three basic axioms:</p>
-    <ul>
-      <li>Probabilities are non-negative.</li>
-      <li>The probability of the entire outcome space is 1.</li>
-      <li>For mutually exclusive events, probabilities add.</li>
-    </ul>
-
-    <h2>Conditional Probability</h2>
     <p>
-      Conditional probability describes how probabilities change when new
-      information becomes available. It is widely used in astronomy when
-      observations depend on selection effects or incomplete data.
+      These rules allow probability to work as a consistent mathematical system.
     </p>
 
-    <h2>Bayes’ Theorem</h2>
+    <h2>Conditional probability</h2>
     <p>
-      Bayes’ theorem provides a method for updating beliefs using observed
-      data. It connects prior knowledge, the likelihood of the data, and the
-      updated posterior belief.
+      Probability often changes when new information is known. Conditional
+      probability describes how likelihood changes once additional information
+      is available.
     </p>
 
-    <h2>Random Variables</h2>
     <p>
-      A random variable assigns numerical values to outcomes. Discrete random
-      variables describe countable outcomes, while continuous random variables
-      describe measurements over a range of values.
+      In astronomy, observations are often affected by detection limits and
+      selection effects. Conditional probability is used to account for these
+      conditions.
     </p>
 
-    <h2>Probability Distributions</h2>
+    <h2>Bayes’ theorem</h2>
+    <p>
+      Bayes’ theorem connects prior knowledge with new data. It provides a rule
+      for updating beliefs after measurements are made.
+    </p>
+
+    <p>
+      The idea is to start with an initial expectation, compare it with observed
+      data, and update the expectation using the data.
+    </p>
+
+    <h2>Random variables and measurements</h2>
+    <p>
+      Measurements are represented using random variables. A random variable
+      assigns numerical values to uncertain quantities such as brightness,
+      distance, velocity, or photon counts.
+    </p>
+
+    <p>
+      Some variables take only whole-number values, while others vary
+      continuously.
+    </p>
+
+    <h2>Probability distributions</h2>
     <p>
       Probability distributions describe how likely different values of a
-      random variable are. The cumulative distribution function gives the
-      probability that a variable is less than or equal to a given value.
+      measurement are. A distribution can be described using a cumulative
+      distribution function or a density function.
     </p>
 
-    <h2>Limit Theorems</h2>
     <p>
-      The Law of Large Numbers explains why averages stabilize as more data
-      are collected. The Central Limit Theorem explains why normal distributions
-      appear so frequently in astronomical data analysis.
+      For continuous measurements, probabilities are assigned to ranges rather
+      than exact values.
+    </p>
+
+    <h2>Independence and assumptions</h2>
+    <p>
+      Many statistical methods assume measurements do not influence each other
+      and come from the same underlying distribution. These assumptions simplify
+      analysis but are not always valid in astronomy.
+    </p>
+
+    <p>
+      Correlated data and time-dependent measurements often violate these
+      assumptions.
+    </p>
+
+    <h2>Large-sample behavior</h2>
+    <p>
+      When many measurements are collected, regular patterns appear. Averages
+      tend to stabilize as more data are added.
+    </p>
+
+    <p>
+      Sums of many independent measurements often follow a normal distribution,
+      even when the original data do not.
+    </p>
+
+    <p>
+      <a href="index.html">← Back to Home</a>
     </p>
 
   </main>
 
   <footer>
-    <p>© <span id="year"></span> Semester Summary</p>
+    <p>© <span id="year"></span> Astrostats Guide</p>
   </footer>
 
   <script>
