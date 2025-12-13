@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 2 — Probability Concepts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      line-height: 1.7;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+      background-color: white;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      color: #222;
+    }
+
+    h3 {
+      margin-top: 1.5rem;
+      color: #444;
+    }
+
+    p {
+      margin: 0.75rem 0;
+    }
+
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    .back {
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Chapter 2 — Probability Concepts</h1>
+    <p>Modern Statistical Methods for Astronomy</p>
+  </header>
+
+  <main>
+
+    <a class="back" href="index.html">← Back to Home</a>
+
+    <h2>Overview</h2>
+    <p>
+      This chapter introduces probability as a mathematical framework for
+      describing uncertainty in astronomical observations. Even when physical
+      laws are deterministic, limited measurements and noise make outcomes
+      uncertain.
+    </p>
+
+    <h2>Uncertainty in Observational Science</h2>
+    <p>
+      The textbook emphasizes that probability theory models uncertainty.
+      Astronomers cannot observe all properties of a system perfectly, and
+      measurements are affected by instrumental limitations and noise.
+    </p>
+
+    <p>
+      As a result, probability is used to quantify how uncertain our knowledge
+      is, rather than assuming measurements are exact.
+    </p>
+
+    <h2>Experiments, Outcome Spaces, and Events</h2>
+
+    <h3>Experiments</h3>
+    <p>
+      An experiment is any process whose outcome cannot be predicted with
+      certainty before it occurs. Examples include counting photons detected
+      by a telescope or measuring a star’s radial velocity.
+    </p>
+
+    <h3>Outcome Space</h3>
+    <p>
+      The outcome space is the set of all possible outcomes of an experiment.
+      For example, photon counting experiments may have outcomes
+      {0, 1, 2, 3, …}.
+    </p>
+
+    <h3>Events</h3>
+    <p>
+      An event is a subset of the outcome space, such as measuring a value
+      above a certain threshold.
+    </p>
+
+    <h2>Axioms of Probability</h2>
+    <p>The book introduces three basic axioms:</p>
+    <ul>
+      <li>Probabilities are non-negative.</li>
+      <li>The probability of the entire outcome space is 1.</li>
+      <li>For mutually exclusive events, probabilities add.</li>
+    </ul>
+
+    <h2>Conditional Probability</h2>
+    <p>
+      Conditional probability describes how probabilities change when new
+      information becomes available. It is widely used in astronomy when
+      observations depend on selection effects or incomplete data.
+    </p>
+
+    <h2>Bayes’ Theorem</h2>
+    <p>
+      Bayes’ theorem provides a method for updating beliefs using observed
+      data. It connects prior knowledge, the likelihood of the data, and the
+      updated posterior belief.
+    </p>
+
+    <h2>Random Variables</h2>
+    <p>
+      A random variable assigns numerical values to outcomes. Discrete random
+      variables describe countable outcomes, while continuous random variables
+      describe measurements over a range of values.
+    </p>
+
+    <h2>Probability Distributions</h2>
+    <p>
+      Probability distributions describe how likely different values of a
+      random variable are. The cumulative distribution function gives the
+      probability that a variable is less than or equal to a given value.
+    </p>
+
+    <h2>Limit Theorems</h2>
+    <p>
+      The Law of Large Numbers explains why averages stabilize as more data
+      are collected. The Central Limit Theorem explains why normal distributions
+      appear so frequently in astronomical data analysis.
+    </p>
+
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Semester Summary</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
