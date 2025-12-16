@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 12 — Spatial Point Processes | Bronco's Astrostats Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1a73e8;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Bronco's Astrostats Guidance Website</h1>
+    <p>Chapter 12 — Spatial Point Processes</p>
+  </header>
+
+  <main>
+
+    <p>
+      This chapter is about data that describe locations in space.
+      Instead of measuring values at fixed points, the data consist of
+      positions of objects.
+    </p>
+
+    <p>
+      In astronomy, this usually means positions of stars, galaxies,
+      clusters, or detected events on the sky.
+      The goal is to understand spatial patterns rather than individual measurements.
+    </p>
+
+    <h2>What makes spatial data different</h2>
+    <p>
+      Spatial data describe where objects occur.
+      The positions are often not independent.
+      Objects may cluster together or avoid each other.
+    </p>
+
+    <p>
+      Methods that assume independence cannot describe this behavior.
+      Spatial point processes provide tools to analyze these patterns.
+    </p>
+
+    <h2>Point patterns</h2>
+    <p>
+      A point pattern is a set of locations in space.
+      Each point represents one object.
+      The pattern may appear random, clustered, or regularly spaced.
+    </p>
+
+    <p>
+      Plotting the points is always the first step,
+      but visual inspection alone is not enough.
+    </p>
+
+    <h2>Complete spatial randomness</h2>
+    <p>
+      Complete spatial randomness is a reference idea.
+      Under this assumption, points occur independently and uniformly over space.
+    </p>
+
+    <p>
+      This model is often used as a baseline for comparison.
+    </p>
+
+    <h2>Poisson point process</h2>
+    <p>
+      The Poisson point process is the simplest spatial point process.
+      Points occur independently, and the number of points in a region
+      follows a Poisson distribution.
+    </p>
+
+    <p>
+      The average density is constant over space.
+      This process is commonly used as a null model.
+    </p>
+
+    <h2>Intensity function</h2>
+    <p>
+      The intensity function describes how point density varies over space.
+      It gives the expected number of points per unit area.
+    </p>
+
+    <p>
+      In some cases, intensity is constant.
+      In other cases, it changes with position.
+    </p>
+
+    <h2>Inhomogeneous Poisson processes</h2>
+    <p>
+      Many astronomical datasets are not uniform.
+      Inhomogeneous Poisson processes allow intensity to vary across space.
+    </p>
+
+    <p>
+      This variation may come from physical structure or observational effects.
+    </p>
+
+    <h2>Clustering and interaction</h2>
+    <p>
+      Not all spatial patterns can be explained by intensity alone.
+      Some point processes include interaction between points.
+    </p>
+
+    <p>
+      Points may attract each other or repel each other,
+      leading to clustering or regular spacing.
+    </p>
+
+    <h2>Ripley’s K function</h2>
+    <p>
+      Ripley’s K function is a common tool for studying spatial clustering.
+      It measures how many points lie within a given distance
+      of a typical point.
+    </p>
+
+    <p>
+      Deviations from random expectations indicate clustering or inhibition.
+    </p>
+
+    <h2>Pair correlation function</h2>
+    <p>
+      The pair correlation function describes how point density changes with distance.
+      It provides a local view of clustering.
+    </p>
+
+    <p>
+      This method helps identify characteristic spatial scales.
+    </p>
+
+    <h2>Edge effects</h2>
+    <p>
+      Spatial analysis is affected by boundaries of the observation region.
+      Points near edges have fewer neighbors within the observed area.
+    </p>
+
+    <p>
+      Edge correction methods are needed to avoid bias.
+    </p>
+
+    <h2>Marked point processes</h2>
+    <p>
+      Sometimes each point has additional information, called a mark.
+      Marks may represent brightness, mass, or other properties.
+    </p>
+
+    <p>
+      Marked point processes study how marks relate to spatial structure.
+    </p>
+
+    <h2>Applications in astronomy</h2>
+    <p>
+      Spatial point processes are used to study galaxy clustering,
+      star-forming regions, and distributions of detected events.
+    </p>
+
+    <p>
+      These methods help separate random structure from physical patterns.
+    </p>
+
+    <h2>Limits of spatial methods</h2>
+    <p>
+      Results depend on assumptions about the observation region
+      and the underlying process.
+    </p>
+
+    <p>
+      Incomplete coverage and selection effects can bias results.
+      Interpretation requires care and physical understanding.
+    </p>
+
+    <p>
+      <a href="index.html">← Back to Home</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Astrostats Guide</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
