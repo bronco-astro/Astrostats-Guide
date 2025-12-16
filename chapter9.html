@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 9 — Clustering & Classification | Bronco's Astrostats Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1a73e8;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Bronco's Astrostats Guidance Website</h1>
+    <p>Chapter 9 — Clustering and Classification</p>
+  </header>
+
+  <main>
+
+    <p>
+      This chapter is about finding structure in data when labels are not always known.
+      Instead of fitting curves or estimating distributions, the goal is to group objects
+      or assign them to categories.
+    </p>
+
+    <p>
+      In astronomy, this often means grouping stars, galaxies, or sources based on observed
+      properties such as color, magnitude, or spectral features.
+    </p>
+
+    <h2>Two main problems</h2>
+    <p>
+      Two different problems appear in this chapter.
+      Clustering groups objects when labels are unknown.
+      Classification assigns objects to known categories when labeled examples are available.
+    </p>
+
+    <p>
+      The choice depends on whether prior information exists.
+    </p>
+
+    <h2>Clustering</h2>
+    <p>
+      Clustering groups data points based on similarity.
+      Objects in the same cluster are closer to each other than to objects in other clusters.
+      Similarity is usually defined using distance in parameter space.
+    </p>
+
+    <p>
+      Clustering is often exploratory and used to discover structure.
+    </p>
+
+    <h2>Distance measures</h2>
+    <p>
+      Distance plays a central role in clustering.
+      Common distance measures include Euclidean distance and standardized distance.
+      When variables have different scales, standardization is often required.
+    </p>
+
+    <p>
+      The choice of distance can strongly affect the result.
+    </p>
+
+    <h2>k-means clustering</h2>
+    <p>
+      k-means is one of the simplest clustering methods.
+      The number of clusters is chosen in advance.
+      Each data point is assigned to the nearest cluster center.
+    </p>
+
+    <p>
+      Cluster centers are updated iteratively until assignments stop changing.
+      k-means is fast but sensitive to initialization and outliers.
+    </p>
+
+    <h2>Hierarchical clustering</h2>
+    <p>
+      Hierarchical clustering builds clusters step by step.
+      Agglomerative methods start with each point as its own cluster and merge them.
+      Divisive methods start with one cluster and split it.
+    </p>
+
+    <p>
+      Results are often visualized using a dendrogram.
+    </p>
+
+    <h2>Gaussian mixture models</h2>
+    <p>
+      Gaussian mixture models assume data are generated from a mixture of Gaussian distributions.
+      Each cluster is described by a mean and covariance.
+      Points are assigned probabilistically rather than deterministically.
+    </p>
+
+    <p>
+      This method allows overlapping clusters and provides uncertainty estimates.
+    </p>
+
+    <h2>Density-based clustering</h2>
+    <p>
+      Density-based methods group points based on local density.
+      Clusters are defined as regions with high density separated by low-density regions.
+      Noise points may be left unassigned.
+    </p>
+
+    <p>
+      These methods work well for irregularly shaped clusters.
+    </p>
+
+    <h2>Classification</h2>
+    <p>
+      Classification assigns data points to predefined classes.
+      Training data with known labels are used to build a model.
+      The model is then applied to new data.
+    </p>
+
+    <p>
+      Classification is commonly used for object identification.
+    </p>
+
+    <h2>Nearest neighbor classification</h2>
+    <p>
+      Nearest neighbor methods classify points based on nearby labeled data.
+      A point is assigned the label most common among its nearest neighbors.
+      The choice of number of neighbors affects smoothness.
+    </p>
+
+    <p>
+      These methods are simple but sensitive to noise.
+    </p>
+
+    <h2>Linear discriminant analysis</h2>
+    <p>
+      Linear discriminant analysis assumes classes follow multivariate normal distributions
+      with shared covariance. It produces linear decision boundaries that separate classes.
+    </p>
+
+    <p>
+      This method works well when assumptions are approximately satisfied.
+    </p>
+
+    <h2>Bayesian classification</h2>
+    <p>
+      Bayesian classifiers use probability models to assign class membership.
+      Class probabilities are computed using likelihoods and prior probabilities.
+      Results are probabilistic rather than fixed labels.
+    </p>
+
+    <p>
+      Bayesian methods naturally incorporate uncertainty.
+    </p>
+
+    <h2>Training, testing, and validation</h2>
+    <p>
+      Classification models must be evaluated on data not used for training.
+      Splitting data into training and test sets helps assess performance.
+      Cross-validation is often used when data are limited.
+    </p>
+
+    <p>
+      This step prevents overfitting.
+    </p>
+
+    <h2>Limits of clustering and classification</h2>
+    <p>
+      Results depend on method choice, distance definitions, and preprocessing.
+      Clusters found by algorithms are not automatically physically meaningful.
+      Interpretation requires domain knowledge.
+    </p>
+
+    <p>
+      <a href="index.html">← Back to Home</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Astrostats Guide</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
