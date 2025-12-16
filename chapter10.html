@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 10 — Truncated Data | Bronco's Astrostats Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1a73e8;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Bronco's Astrostats Guidance Website</h1>
+    <p>Chapter 10 — Censored and Truncated Data</p>
+  </header>
+
+  <main>
+
+    <p>
+      This chapter is about data that are incomplete because of observational limits.
+      In astronomy, this happens very often. Instruments have detection limits,
+      and surveys have selection rules.
+    </p>
+
+    <p>
+      Censored and truncated data require special treatment.
+      Using standard statistical methods without accounting for these effects
+      can lead to biased results.
+    </p>
+
+    <h2>Why incomplete data appear</h2>
+    <p>
+      Astronomical observations are limited by sensitivity.
+      Some objects are too faint to be detected, while others are only partially measured.
+    </p>
+
+    <p>
+      The dataset does not represent the full underlying population.
+      Understanding how data are missing is the first step.
+    </p>
+
+    <h2>Censoring versus truncation</h2>
+    <p>
+      Censoring and truncation describe different situations.
+    </p>
+
+    <p>
+      Censoring means an object is observed, but its value is not fully known.
+      An upper limit is measured instead of an exact value.
+    </p>
+
+    <p>
+      Truncation means objects are completely missing from the dataset
+      if they fall outside some range.
+    </p>
+
+    <p>
+      This distinction matters because it changes how analysis is done.
+    </p>
+
+    <h2>Types of censoring</h2>
+    <p>
+      Right censoring occurs when values above a threshold are unknown.
+      Left censoring occurs when values below a threshold are unknown.
+    </p>
+
+    <p>
+      Interval censoring occurs when values are only known to lie within a range.
+      Upper limits are a common form of censoring in astronomy.
+    </p>
+
+    <h2>Problems with ignoring censoring</h2>
+    <p>
+      If censored data are treated as exact values or discarded,
+      statistical estimates become biased.
+    </p>
+
+    <p>
+      Means, correlations, and regression slopes can be strongly distorted,
+      especially when faint objects are ignored.
+    </p>
+
+    <h2>Survival analysis ideas</h2>
+    <p>
+      Many methods for censored data come from survival analysis.
+      These methods treat limits explicitly instead of ignoring them.
+    </p>
+
+    <p>
+      Survival analysis was originally developed for time-to-event data
+      but applies naturally to astronomical measurements.
+    </p>
+
+    <h2>The Kaplan–Meier estimator</h2>
+    <p>
+      The Kaplan–Meier estimator is used to estimate distributions with censored data.
+      It builds a stepwise estimate of the cumulative distribution function
+      while accounting for censored observations.
+    </p>
+
+    <p>
+      This method allows both detected values and limits to be included.
+    </p>
+
+    <h2>Comparing censored samples</h2>
+    <p>
+      Comparing samples that contain censoring requires special tests.
+      Rank-based tests have versions that handle censored data.
+    </p>
+
+    <p>
+      Ignoring censoring in comparisons can lead to incorrect conclusions.
+    </p>
+
+    <h2>Regression with censored data</h2>
+    <p>
+      Regression becomes more complicated when the response variable is censored.
+      Ordinary least squares does not apply directly.
+    </p>
+
+    <p>
+      Likelihood-based methods are commonly used instead.
+    </p>
+
+    <h2>Maximum likelihood approaches</h2>
+    <p>
+      Maximum likelihood provides a natural framework for censored and truncated data.
+      The likelihood includes contributions from both detected values and limits.
+    </p>
+
+    <p>
+      This allows all available information to be used.
+    </p>
+
+    <h2>Truncated data</h2>
+    <p>
+      In truncated samples, some objects are completely missing.
+      For example, a flux-limited survey only includes objects brighter
+      than a detection threshold.
+    </p>
+
+    <p>
+      Objects below the threshold never appear in the dataset.
+    </p>
+
+    <h2>Methods for truncated data</h2>
+    <p>
+      Analysis of truncated data requires modeling the selection process.
+      Likelihood functions are conditioned on objects being observed.
+    </p>
+
+    <p>
+      This correction accounts for missing objects and reduces bias.
+    </p>
+
+    <h2>Astronomical examples</h2>
+    <p>
+      Censored and truncated data appear in luminosity functions,
+      flux measurements, and survey catalogs.
+    </p>
+
+    <p>
+      Proper treatment of limits and selection effects is essential
+      for reliable scientific conclusions.
+    </p>
+
+    <h2>Limits of these methods</h2>
+    <p>
+      These methods rely on assumptions about censoring and truncation mechanisms.
+      If assumptions are wrong, results can still be biased.
+    </p>
+
+    <p>
+      Understanding the observational process is essential.
+    </p>
+
+    <p>
+      <a href="index.html">← Back to Home</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Astrostats Guide</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
