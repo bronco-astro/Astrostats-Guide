@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 5 — Nonparametric Statistics | Bronco's Astrostats Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1a73e8;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Bronco's Astrostats Guidance Website</h1>
+    <p>Chapter 5 — Nonparametric Statistics</p>
+  </header>
+
+  <main>
+
+    <p>
+      Nonparametric methods are used when data do not follow a known probability
+      distribution. Instead of assuming a specific functional form, these methods
+      rely more directly on the data itself.
+    </p>
+
+    <p>
+      In astronomy, data often violate ideal assumptions. Measurements may be
+      noisy, skewed, censored, or contain outliers. Nonparametric methods are
+      useful in these situations because they make fewer assumptions.
+    </p>
+
+    <h2>Why nonparametric methods are needed</h2>
+    <p>
+      Many statistical methods assume data follow a specific distribution, such
+      as the normal distribution. In real astronomical data, this assumption is
+      often not valid.
+    </p>
+
+    <p>
+      Nonparametric methods avoid strong assumptions about distribution shape.
+      They are more flexible and often more robust when working with real
+      observations.
+    </p>
+
+    <h2>Ranks instead of values</h2>
+    <p>
+      A key idea in nonparametric statistics is the use of ranks instead of actual
+      values.
+    </p>
+
+    <p>
+      Data points are ordered from smallest to largest, and analysis is performed
+      using their positions in the ordered list. This reduces sensitivity to
+      extreme values and measurement errors.
+    </p>
+
+    <h2>Empirical distribution function</h2>
+    <p>
+      The empirical distribution function describes the distribution of observed
+      data directly.
+    </p>
+
+    <p>
+      It increases step by step as data values increase. Each step corresponds to
+      one observation. This function provides a nonparametric estimate of the
+      cumulative distribution.
+    </p>
+
+    <p>
+      The empirical distribution function converges to the true distribution as
+      more data are collected.
+    </p>
+
+    <h2>Sample quantiles</h2>
+    <p>
+      Quantiles describe positions within a dataset. The median divides the data
+      into two equal parts. Other quantiles divide the data into more parts.
+    </p>
+
+    <p>
+      Quantiles are nonparametric summaries because they do not depend on any
+      assumed distribution. They are useful for skewed data and data with
+      outliers.
+    </p>
+
+    <h2>The sign test</h2>
+    <p>
+      The sign test is a simple nonparametric method for testing whether a
+      distribution is centered around a specific value.
+    </p>
+
+    <p>
+      Only the direction of deviation matters, not the size. This makes the test
+      robust but less sensitive than parametric alternatives.
+    </p>
+
+    <h2>The Wilcoxon tests</h2>
+    <p>
+      Wilcoxon tests use ranks to compare data sets.
+    </p>
+
+    <p>
+      The Wilcoxon signed-rank test is used for paired data.
+      The Wilcoxon rank-sum test is used to compare two independent samples.
+    </p>
+
+    <h2>Correlation without assuming linearity</h2>
+    <p>
+      Nonparametric correlation measures describe relationships between variables
+      without assuming a linear relationship.
+    </p>
+
+    <p>
+      Rank-based correlation measures detect monotonic relationships and are less
+      sensitive to outliers.
+    </p>
+
+    <h2>Two-sample comparisons</h2>
+    <p>
+      Nonparametric methods are often used to compare two samples when their
+      distributions are unknown or unequal.
+    </p>
+
+    <p>
+      These methods test whether two samples come from the same underlying
+      distribution without specifying its shape.
+    </p>
+
+    <h2>Strengths and limitations</h2>
+    <p>
+      Nonparametric methods are robust and flexible. They work well with small
+      sample sizes and non-normal data.
+    </p>
+
+    <p>
+      However, they may discard some information and can be less efficient when
+      parametric assumptions are actually valid.
+    </p>
+
+    <p>
+      <a href="index.html">← Back to Home</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Astrostats Guide</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
