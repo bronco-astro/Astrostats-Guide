@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 7 — Regression | Bronco's Astrostats Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1a73e8;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Bronco's Astrostats Guidance Website</h1>
+    <p>Chapter 7 — Regression</p>
+  </header>
+
+  <main>
+
+    <p>
+      Regression is about fitting a model to data. Most of the time in this course,
+      the model is a straight line. The goal is to find the line that best represents
+      the relationship between variables.
+    </p>
+
+    <p>
+      The fitted line is not exact. It is an approximation that balances all data
+      points and accounts for uncertainty and noise.
+    </p>
+
+    <h2>Lines as models</h2>
+    <p>
+      A line in regression is a model for the data.
+    </p>
+
+    <p>
+      The model predicts a response value based on an explanatory value plus an error term.
+      The error term represents measurement noise and effects that are not included in the model.
+    </p>
+
+    <p>
+      Different models can be used, but the simplest and most common is a straight line.
+    </p>
+
+    <h2>Ordinary least squares (OLS)</h2>
+    <p>
+      Ordinary least squares is the most common method for fitting a regression line.
+    </p>
+
+    <p>
+      OLS chooses the line that minimizes the sum of squared residuals. A residual is the
+      vertical difference between a data point and the model prediction.
+    </p>
+
+    <p>
+      Squaring the residuals makes large deviations matter more. This means OLS is sensitive
+      to outliers.
+    </p>
+
+    <p>
+      OLS appeared often because it is simple, fast, and has clear mathematical properties.
+    </p>
+
+    <h2>Why OLS works</h2>
+    <p>
+      OLS can be understood as a geometric problem or as an optimization problem.
+    </p>
+
+    <p>
+      It finds the model parameters that make the predicted values as close as possible
+      to the observed data, according to the squared-error measure.
+    </p>
+
+    <p>
+      Under certain assumptions, OLS has useful optimal properties.
+    </p>
+
+    <h2>Maximum likelihood viewpoint</h2>
+    <p>
+      Regression can also be understood using maximum likelihood.
+    </p>
+
+    <p>
+      Instead of minimizing squared residuals directly, maximum likelihood chooses model
+      parameters that make the observed data most probable under an assumed error model.
+    </p>
+
+    <p>
+      This provides a more general framework for regression.
+    </p>
+
+    <h2>Connection between OLS and maximum likelihood</h2>
+    <p>
+      If the errors are assumed to be independent and normally distributed with constant
+      variance, maximizing the likelihood leads to the same solution as ordinary least squares.
+    </p>
+
+    <p>
+      This explains why OLS is so widely used. It is not just a convenient rule, but also a
+      likelihood-based solution under common assumptions.
+    </p>
+
+    <h2>Likelihood function</h2>
+    <p>
+      The likelihood function measures how probable the observed data are for a given set
+      of model parameters.
+    </p>
+
+    <p>
+      In regression, the likelihood depends on the residuals and the assumed error distribution.
+    </p>
+
+    <p>
+      Changing the assumed error distribution changes the likelihood and can lead to different
+      best-fit models.
+    </p>
+
+    <h2>Beyond normal errors</h2>
+    <p>
+      When errors are not normally distributed, ordinary least squares may no longer be appropriate.
+    </p>
+
+    <p>
+      Maximum likelihood allows different error models, such as Poisson errors for count data.
+      In these cases, the best-fit model is found by maximizing the likelihood rather than minimizing
+      squared residuals.
+    </p>
+
+    <p>
+      This idea becomes important for astronomical data with non-Gaussian noise.
+    </p>
+
+    <h2>Interpreting the fit</h2>
+    <p>
+      Both OLS and maximum likelihood produce parameter estimates for the model.
+    </p>
+
+    <p>
+      Uncertainty in these estimates comes from noise in the data. Likelihood-based methods provide
+      a natural way to quantify this uncertainty.
+    </p>
+
+    <p>
+      Understanding how the fit depends on assumptions helps interpret regression results correctly.
+    </p>
+
+    <p>
+      <a href="index.html">← Back to Home</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Astrostats Guide</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
