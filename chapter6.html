@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 6 — Data Smoothing & Density Estimation | Bronco's Astrostats Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- MathJax for LaTeX equations -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1a73e8;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Bronco's Astrostats Guidance Website</h1>
+    <p>Chapter 6 — Data Smoothing and Density Estimation</p>
+  </header>
+
+  <main>
+
+    <p>
+      This chapter is about smoothing data and estimating distributions directly from data.
+      Instead of assuming a global model, these methods focus on local behavior.
+    </p>
+
+    <p>
+      Astronomical data are often noisy. Smoothing helps reduce random fluctuations and
+      makes underlying structure easier to see.
+    </p>
+
+    <h2>Why smoothing is needed</h2>
+    <p>
+      Individual measurements can vary strongly due to noise.
+      Even when the true signal is smooth, raw data may look irregular.
+      Smoothing reduces noise while keeping real trends.
+    </p>
+
+    <p>
+      The goal is not to perfectly fit the data, but to reveal structure.
+    </p>
+
+    <h2>Smoothing versus fitting</h2>
+    <p>
+      Fitting assumes a global model, such as a straight line or curve.
+      Smoothing does not assume one model for the entire dataset.
+      It uses nearby points to estimate local behavior.
+    </p>
+
+    <p>
+      This makes smoothing flexible but sensitive to parameter choices.
+    </p>
+
+    <h2>Moving average smoothing</h2>
+    <p>
+      The moving average is one of the simplest smoothing methods.
+      Each value is replaced by the average of nearby values.
+      This reduces noise but can blur sharp features.
+    </p>
+
+    <p>
+      For a window of width \(m\), the smoothed value is
+    </p>
+
+    \[
+      \hat{y}_i = \frac{1}{m} \sum_{j=i-k}^{i+k} y_j
+    \]
+
+    <h2>Kernel smoothing</h2>
+    <p>
+      Kernel smoothing generalizes the moving average.
+      Nearby points contribute with weights determined by a kernel function.
+      Points closer to the target location have larger weights.
+    </p>
+
+    <p>
+      The kernel smoother is
+    </p>
+
+    \[
+      \hat{y}(x) =
+      \frac{\sum_{i=1}^n K\!\left(\frac{x - x_i}{h}\right) y_i}
+      {\sum_{i=1}^n K\!\left(\frac{x - x_i}{h}\right)}
+    \]
+
+    <p>
+      where \(K\) is the kernel and \(h\) is the bandwidth.
+    </p>
+
+    <h2>Bandwidth choice</h2>
+    <p>
+      The bandwidth controls how much smoothing is applied.
+      Small bandwidth keeps more detail but more noise.
+      Large bandwidth gives smoother curves but may hide structure.
+    </p>
+
+    <p>
+      Choosing bandwidth is often more important than choosing the kernel shape.
+    </p>
+
+    <h2>LOWESS and LOESS</h2>
+    <p>
+      LOWESS stands for locally weighted scatterplot smoothing.
+      LOWESS fits a simple regression model to points in a local neighborhood.
+      Points closer to the target location receive higher weights.
+    </p>
+
+    <p>
+      At each location, a weighted least squares fit is performed.
+      The fitted value comes from this local model.
+      LOESS is a generalization that allows higher-degree polynomials.
+    </p>
+
+    <h2>LOWESS weighting</h2>
+    <p>
+      In LOWESS, weights are based on distance.
+      A common weight function is the tricube weight
+    </p>
+
+    \[
+      w_i(x) =
+      \left(1 - \left|\frac{x - x_i}{d}\right|^3\right)^3
+    \]
+
+    <p>
+      for points within the local window, and zero outside.
+    </p>
+
+    <h2>Robust LOWESS</h2>
+    <p>
+      LOWESS can be sensitive to outliers.
+      Robust LOWESS reduces the influence of outliers by iteratively
+      down-weighting points with large residuals.
+    </p>
+
+    <p>
+      This makes the smoother more stable for noisy astronomical data.
+    </p>
+
+    <h2>Density estimation</h2>
+    <p>
+      Density estimation focuses on estimating the probability distribution of a variable
+      directly from data. Instead of assuming a known distribution, the density is built
+      from observed values.
+    </p>
+
+    <h2>Histogram as density estimation</h2>
+    <p>
+      A histogram estimates density by grouping data into bins.
+      The estimate depends strongly on bin width and bin placement.
+      Histograms are simple but can look very different with different bin choices.
+    </p>
+
+    <h2>Kernel density estimation (KDE)</h2>
+    <p>
+      Kernel density estimation provides a smooth alternative to histograms.
+      Each data point contributes a kernel, and all kernels are summed.
+    </p>
+
+    <p>
+      The KDE is
+    </p>
+
+    \[
+      \hat{f}(x) =
+      \frac{1}{n h}
+      \sum_{i=1}^n
+      K\!\left(\frac{x - x_i}{h}\right)
+    \]
+
+    <p>
+      where \(h\) is the bandwidth.
+    </p>
+
+    <h2>Bias and variance trade-off</h2>
+    <p>
+      Smoothing involves a trade-off between bias and variance.
+      Too little smoothing gives noisy estimates.
+      Too much smoothing hides structure.
+    </p>
+
+    <h2>Edge effects</h2>
+    <p>
+      Near the boundaries of the data range, smoothing and density estimation can behave poorly.
+      Estimates near edges may be biased because fewer data points are available.
+      Special corrections may be needed when boundaries are important.
+    </p>
+
+    <h2>Limits of smoothing methods</h2>
+    <p>
+      Smoothing does not create information.
+      Results depend on bandwidth and method choices.
+      Smoothed curves should be interpreted as exploratory tools, not exact models.
+    </p>
+
+    <p>
+      <a href="index.html">← Back to Home</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Astrostats Guide</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
