@@ -68,24 +68,15 @@
   <main>
 
     <p>
-      Nonparametric methods are used when data do not follow a known probability
-      distribution. Instead of assuming a specific functional form, these methods
-      rely more directly on the data itself.
+      Nonparametric methods are used when we have no prior assumption towards the data.
+      Instead of assuming a specific functional form, these methods
+      focus more on what data tells you.
     </p>
 
     <p>
       In astronomy, data often violate ideal assumptions. Measurements may be
       noisy, skewed, censored, or contain outliers. Nonparametric methods are
       useful in these situations because they make fewer assumptions.
-    </p>
-
-    <h2>Why nonparametric methods are needed</h2>
-    <p>
-      Many statistical methods assume data follow a specific distribution, such
-      as the normal distribution. In real astronomical data, this assumption is
-      often not valid.
-    </p>
-
     <p>
       Nonparametric methods avoid strong assumptions about distribution shape.
       They are more flexible and often more robust when working with real
@@ -95,13 +86,7 @@
     <h2>Ranks instead of values</h2>
     <p>
       A key idea in nonparametric statistics is the use of ranks instead of actual
-      values.
-    </p>
-
-    <p>
-      Data points are ordered from smallest to largest, and analysis is performed
-      using their positions in the ordered list. This reduces sensitivity to
-      extreme values and measurement errors.
+      values. This reduces sensitivity  to extreme values and measurement errors.
     </p>
 
     <h2>Empirical distribution function</h2>
@@ -112,7 +97,7 @@
 
     <p>
       It increases step by step as data values increase. Each step corresponds to
-      one observation. This function provides a nonparametric estimate of the
+      one data point. This function provides a nonparametric estimate of the
       cumulative distribution.
     </p>
 
@@ -125,12 +110,7 @@
     <p>
       Quantiles describe positions within a dataset. The median divides the data
       into two equal parts. Other quantiles divide the data into more parts.
-    </p>
-
-    <p>
-      Quantiles are nonparametric summaries because they do not depend on any
-      assumed distribution. They are useful for skewed data and data with
-      outliers.
+      Quantiles are helpful for skewed data and data with outliers.
     </p>
 
     <h2>The sign test</h2>
@@ -141,7 +121,7 @@
 
     <p>
       Only the direction of deviation matters, not the size. This makes the test
-      robust but less sensitive than parametric alternatives.
+      robust but less sensitive than parametric testing.
     </p>
 
     <h2>The Wilcoxon tests</h2>
@@ -156,19 +136,19 @@
 
     <h2>Correlation without assuming linearity</h2>
     <p>
-      Nonparametric correlation measures describe relationships between variables
-      without assuming a linear relationship.
+      Nonparametric correlation describes relationships between variables
+      without assuming there' a linear relationship.
     </p>
 
     <p>
-      Rank-based correlation measures detect monotonic relationships and are less
+      Rank-based correlation detect monotonic relationships and are less
       sensitive to outliers.
     </p>
 
     <h2>Two-sample comparisons</h2>
     <p>
       Nonparametric methods are often used to compare two samples when their
-      distributions are unknown or unequal.
+      distributions are unknown.
     </p>
 
     <p>
@@ -183,8 +163,8 @@
     </p>
 
     <p>
-      However, they may discard some information and can be less efficient when
-      parametric assumptions are actually valid.
+      However, they may ignore some information and can be less efficient when
+      parametric assumptions are actually valid here.
     </p>
 
     <p>
