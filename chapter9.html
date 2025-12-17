@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Chapter 9 — Clustering & Classification | Bronco's Astrostats Guide</title>
+  <title>Chapter 9 — Clustering| Bronco's Astrostats Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -62,20 +62,19 @@
 
   <header>
     <h1>Bronco's Astrostats Guidance Website</h1>
-    <p>Chapter 9 — Clustering and Classification</p>
+    <p>Chapter 9 — Clustering</p>
   </header>
 
   <main>
 
     <p>
-      This chapter is about finding structure in data when labels are not always known.
-      Instead of fitting curves or estimating distributions, the goal is to group objects
+      This chapter is about finding structure in data and group objects
       or assign them to categories.
     </p>
 
     <p>
       In astronomy, this often means grouping stars, galaxies, or sources based on observed
-      properties such as color, magnitude, or spectral features.
+      properties such as colour, magnitude, or spectral types.
     </p>
 
     <h2>Two main problems</h2>
@@ -93,29 +92,25 @@
     <p>
       Clustering groups data points based on similarity.
       Objects in the same cluster are closer to each other than to objects in other clusters.
-      Similarity is usually defined using distance in parameter space.
+      And similarity is usually defined using distance in parameter space.
     </p>
 
     <p>
       Clustering is often exploratory and used to discover structure.
     </p>
 
-    <h2>Distance measures</h2>
+    <h2>Distance measurement</h2>
     <p>
-      Distance plays a central role in clustering.
+      Distance plays a important role in clustering.
       Common distance measures include Euclidean distance and standardized distance.
-      When variables have different scales, standardization is often required.
-    </p>
-
-    <p>
-      The choice of distance can strongly affect the result.
+      Whereas variables have different scales, standardization is often needed.
     </p>
 
     <h2>k-means clustering</h2>
     <p>
       k-means is one of the simplest clustering methods.
-      The number of clusters is chosen in advance.
-      Each data point is assigned to the nearest cluster center.
+      The number of clusters is chosen beforehand, then we
+      assign each data pointto the nearest cluster center.
     </p>
 
     <p>
@@ -134,26 +129,12 @@
       Results are often visualized using a dendrogram.
     </p>
 
-    <h2>Gaussian mixture models</h2>
-    <p>
-      Gaussian mixture models assume data are generated from a mixture of Gaussian distributions.
-      Each cluster is described by a mean and covariance.
-      Points are assigned probabilistically rather than deterministically.
-    </p>
-
-    <p>
-      This method allows overlapping clusters and provides uncertainty estimates.
-    </p>
 
     <h2>Density-based clustering</h2>
     <p>
       Density-based methods group points based on local density.
       Clusters are defined as regions with high density separated by low-density regions.
-      Noise points may be left unassigned.
-    </p>
-
-    <p>
-      These methods work well for irregularly shaped clusters.
+      But noise points may be left unassigned.
     </p>
 
     <h2>Classification</h2>
@@ -167,26 +148,14 @@
       Classification is commonly used for object identification.
     </p>
 
-    <h2>Nearest neighbor classification</h2>
+    <h2>Nearest neighbour classification</h2>
     <p>
       Nearest neighbor methods classify points based on nearby labeled data.
-      A point is assigned the label most common among its nearest neighbors.
-      The choice of number of neighbors affects smoothness.
+      A point is assigned the label most common among its nearest neighbours.
+      Thus, the choice of number of neighbours affects smoothness.
     </p>
 
-    <p>
-      These methods are simple but sensitive to noise.
-    </p>
 
-    <h2>Linear discriminant analysis</h2>
-    <p>
-      Linear discriminant analysis assumes classes follow multivariate normal distributions
-      with shared covariance. It produces linear decision boundaries that separate classes.
-    </p>
-
-    <p>
-      This method works well when assumptions are approximately satisfied.
-    </p>
 
     <h2>Bayesian classification</h2>
     <p>
@@ -195,26 +164,19 @@
       Results are probabilistic rather than fixed labels.
     </p>
 
-    <p>
-      Bayesian methods naturally incorporate uncertainty.
-    </p>
-
     <h2>Training, testing, and validation</h2>
     <p>
-      Classification models must be evaluated on data not used for training.
-      Splitting data into training and test sets helps assess performance.
-      Cross-validation is often used when data are limited.
+      Classification models must be evaluated from data that is not used for training.
+      Splitting data into training and test sets helps evaluate and improve performance.
+      Cross-validation can also be used when data are limited.
     </p>
 
-    <p>
-      This step prevents overfitting.
-    </p>
 
     <h2>Limits of clustering and classification</h2>
     <p>
       Results depend on method choice, distance definitions, and preprocessing.
-      Clusters found by algorithms are not automatically physically meaningful.
-      Interpretation requires domain knowledge.
+      Clusters found by algorithms do not usually have a physical meaning.
+      The computer is doing the clustering whereas we will assign meanings to them.
     </p>
 
     <p>
