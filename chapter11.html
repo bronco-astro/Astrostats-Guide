@@ -71,14 +71,12 @@
 
     <p>
       Examples include light curves, radial velocity measurements, or count rates.
-      In time series data, the order of observations matters.
     </p>
 
     <h2>Why time series are different</h2>
     <p>
       In time series data, measurements close in time are often related.
-      This means data points are not independent. Many methods from earlier
-      chapters assume independence, so they do not apply directly here.
+      This means data points are not independent near it's temporal neighbour.
     </p>
 
     <p>
@@ -89,14 +87,14 @@
     <p>
       The first thing to do is always to plot the data against time.
       Plotting helps identify trends, sudden changes, gaps, outliers,
-      and possible periodic behavior.
+      and possible periodic behaviour.
     </p>
 
     <h2>Trends and variability</h2>
     <p>
       A time series often contains both trends and variability.
-      A trend is a slow change over time, such as a gradual increase or decrease.
-      Variability refers to fluctuations around a typical level.
+      A trend change over time, such as a gradual increase or decrease.
+      Variability refers to fluctuations around a trend.
     </p>
 
     <p>
@@ -110,11 +108,6 @@
       stay roughly constant.
     </p>
 
-    <p>
-      Real astronomical time series are often not stationary. Transformations such
-      as differencing are used to make data closer to stationary.
-    </p>
-
     <h2>Autocorrelation</h2>
     <p>
       Autocorrelation measures how similar the data are to themselves at different
@@ -123,7 +116,7 @@
     </p>
 
     <p>
-      Autocorrelation describes memory in the data and is a key idea behind many
+      Autocorrelation describes memory in the data and is a key idea under many
       time series models.
     </p>
 
@@ -146,7 +139,7 @@
 
     <p>
       The parameter p specifies how many past values are used.
-      Larger p means longer memory.
+      Larger p means longer time step.
     </p>
 
     <h2>Integrated (I) part</h2>
@@ -161,22 +154,17 @@
 
     <h2>Moving average (MA) part</h2>
     <p>
-      The moving average part models the current value using past errors.
+      The moving average part models the current value using previous errors.
       Instead of using past values directly, the MA part uses previous prediction errors.
     </p>
 
     <p>
-      The parameter q specifies how many past errors are included.
+      The parameter q specifies how many previous errors are included.
     </p>
 
     <h2>Choosing p, d, and q</h2>
     <p>
       Choosing ARIMA parameters is an important step.
-      Plots of the autocorrelation function and partial autocorrelation function
-      are often used to guide this choice.
-    </p>
-
-    <p>
       The goal is to find a model that captures structure without overfitting noise.
     </p>
 
@@ -194,31 +182,21 @@
     <h2>Model diagnostics</h2>
     <p>
       After fitting an ARIMA model, residuals should be examined.
-      If the model is appropriate, residuals should look like uncorrelated noise.
+      If the model is good, residuals should look like white noise.
     </p>
 
     <p>
-      Patterns in residuals suggest the model is missing structure.
-      Diagnostics are essential before trusting forecasts.
+      Patterns in residuals suggest the model is missing additional parameter.
+      Diagnostics are significant before trusting forecasts.
     </p>
 
     <h2>Forecasting</h2>
     <p>
-      ARIMA models are often used for forecasting.
-      Forecasts are more reliable over short time horizons.
-      Uncertainty increases quickly when predicting far into the future.
+      ARIMA models are often used for forecasting.     
+      Uncertainty could increases quickly as we predicting far into the future.
     </p>
 
-    <h2>Limits of ARIMA models</h2>
-    <p>
-      ARIMA models work well for many types of data, but they have limits.
-      They assume linear relationships and may not capture complex periodic signals
-      or nonstationary behavior.
-    </p>
-
-    <p>
-      In astronomy, ARIMA is often one tool among many.
-    </p>
+  
 
     <p>
       <a href="index.html">← Back to Home</a>
