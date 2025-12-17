@@ -76,32 +76,31 @@
 
     <p>
       Multivariate analysis deals with data that contain more than one variable for
-      each observation. Earlier topics often focused on one variable or pairs of
-      variables. In this chapter, many variables are considered at the same time.
-      We use PCA to group variable and test their influence.
+      each observation. In this chapter, many variables are considered at the same time.
+      We use PCA to group variable and test their influence. And then ICA to separate. For instance, 
+      ICA can be used to seperate different audio sources to find hidden message.
     </p>
 
     <h2>Why multivariate methods are needed</h2>
     <p>
       Looking at one variable at a time can hide structure in the data.
       Some patterns only appear when several variables are considered together.
-      Multivariate methods help describe these relationships in higher-dimensional spaces.
+      Multivariate methods help describe these relationships in multi-dimensional spaces.
     </p>
 
     <h2>Multivariate data as points</h2>
     <p>
-      Each observation can be viewed as a point in a space with many dimensions.
-      Each dimension corresponds to one variable. A dataset becomes a cloud of points
-      in this multi-dimensional space. Multivariate methods aim to summarize and
-      understand the shape of this cloud.
+      Each observation can be viewed as a point in a space with many dimensions, where
+      each dimension corresponds to one variable. A dataset becomes a cloud of points
+      in this multi-dimensional space. Multivariate methods is used to summarize and
+      understand the shape of this cloud better.
     </p>
 
     <h2>Covariance between variables</h2>
     <p>
       Covariance measures how two variables vary together.
       If large values of one variable tend to occur with large values of another,
-      the covariance is positive. If one variable tends to be large when the other
-      is small, the covariance is negative.
+      the covariance is positive. And vice versa.
     </p>
 
     <p>
@@ -122,7 +121,7 @@
     <h2>Correlation</h2>
     <p>
       Correlation is a scaled version of covariance.
-      It removes units and restricts values to lie between −1 and 1, which makes
+      It removes units and limits values to lie between −1 and 1, which makes
       interpretation easier.
     </p>
 
@@ -141,14 +140,9 @@
 
     <h2>The covariance matrix</h2>
     <p>
-      When working with many variables, covariances are collected into a covariance matrix.
+      When working with many variables, covariances are transformed into a covariance matrix.
       For p variables, the covariance matrix is a p × p matrix. Diagonal elements contain
       variances, and off-diagonal elements contain covariances between different variables.
-    </p>
-
-    <p>
-      The covariance matrix summarizes relationships among all variables at once and plays
-      a central role in multivariate analysis.
     </p>
 
     <h2>Principal component analysis (PCA)</h2>
@@ -181,21 +175,21 @@
     </p>
 
     <p>
-      Eigenvectors define the directions of the principal components. Eigenvalues measure
+      Eigenvectors define the directions of the principal components. Besides, it measures
       how much variance is explained by each component.
     </p>
 
     <h2>Dimension reduction</h2>
     <p>
-      High-dimensional data are difficult to visualize and analyze.
+      Multi-dimensional data are difficult to visualize and analyze.
       PCA is often used to reduce the number of variables by keeping only the first few
-      principal components. These components usually explain most of the variance in the data.
+      principal components. These components usually explain most of the variance in the dataset.
     </p>
 
     <h2>Scaling and standardization</h2>
     <p>
       Variables often have different units and ranges.
-      Before applying PCA or covariance-based methods, data are often standardized so that
+      Before applying PCA, data are often standardized so that
       each variable has mean zero and standard deviation one.
     </p>
 
@@ -203,18 +197,11 @@
       Without scaling, variables with large numerical ranges can dominate the results.
     </p>
 
-    <h2>Multivariate normal distribution</h2>
-    <p>
-      Some multivariate methods assume data follow a multivariate normal distribution.
-      This distribution is described by a mean vector and a covariance matrix.
-      It generalizes the one-dimensional normal distribution to higher dimensions.
-    </p>
-
     <h2>Limits of multivariate methods</h2>
     <p>
       Multivariate techniques are powerful but sensitive to noise, outliers, and preprocessing choices.
-      Interpretation becomes harder as the number of variables increases. Understanding assumptions
-      is important before drawing conclusions.
+      Interpretation becomes harder as the number of variables increases. Therefore, it is important to understand 
+      each principal component before making any further step.
     </p>
 
     <p>
