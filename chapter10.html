@@ -75,25 +75,15 @@
       can lead to biased results.
     </p>
 
-    <h2>Why incomplete data appear</h2>
-    <p>
-      Astronomical observations are limited by sensitivity.
-      Some objects are too faint to be detected, while others are only partially measured.
-    </p>
-
-    <p>
-      The dataset does not represent the full underlying population.
-      Understanding how data are missing is the first step.
-    </p>
 
     <h2>Censoring versus truncation</h2>
     <p>
-      Censoring and truncation describe different situations.
+      Censoring and truncation describe two different situations.
     </p>
 
     <p>
       Censoring means an object is observed, but its value is not fully known.
-      An upper limit is measured instead of an exact value.
+      An upper or lower limit is measured instead of an exact value.
     </p>
 
     <p>
@@ -101,28 +91,17 @@
       if they fall outside some range.
     </p>
 
-    <p>
-      This distinction matters because it changes how analysis is done.
-    </p>
 
     <h2>Types of censoring</h2>
     <p>
-      Right censoring occurs when values above a threshold are unknown.
-      Left censoring occurs when values below a threshold are unknown.
-    </p>
-
-    <p>
-      Interval censoring occurs when values are only known to lie within a range.
-      Upper limits are a common form of censoring in astronomy.
+      Right censoring occurs when values above a certain value are unknown.
+      Left censoring occurs when values below a certain value are unknown.
     </p>
 
     <h2>Problems with ignoring censoring</h2>
     <p>
       If censored data are treated as exact values or discarded,
       statistical estimates become biased.
-    </p>
-
-    <p>
       Means, correlations, and regression slopes can be strongly distorted,
       especially when faint objects are ignored.
     </p>
@@ -134,8 +113,7 @@
     </p>
 
     <p>
-      Survival analysis was originally developed for time-to-event data
-      but applies naturally to astronomical measurements.
+      It measures the probability of survival after certain period of time.
     </p>
 
     <h2>The Kaplan–Meier estimator</h2>
@@ -149,24 +127,11 @@
       This method allows both detected values and limits to be included.
     </p>
 
-    <h2>Comparing censored samples</h2>
-    <p>
-      Comparing samples that contain censoring requires special tests.
-      Rank-based tests have versions that handle censored data.
-    </p>
-
-    <p>
-      Ignoring censoring in comparisons can lead to incorrect conclusions.
-    </p>
-
+    
     <h2>Regression with censored data</h2>
     <p>
       Regression becomes more complicated when the response variable is censored.
-      Ordinary least squares does not apply directly.
-    </p>
-
-    <p>
-      Likelihood-based methods are commonly used instead.
+      Ordinary least squares does not apply. Instead, we use likelihood functions.
     </p>
 
     <h2>Maximum likelihood approaches</h2>
@@ -184,9 +149,6 @@
       In truncated samples, some objects are completely missing.
       For example, a flux-limited survey only includes objects brighter
       than a detection threshold.
-    </p>
-
-    <p>
       Objects below the threshold never appear in the dataset.
     </p>
 
@@ -200,27 +162,8 @@
       This correction accounts for missing objects and reduces bias.
     </p>
 
-    <h2>Astronomical examples</h2>
-    <p>
-      Censored and truncated data appear in luminosity functions,
-      flux measurements, and survey catalogs.
-    </p>
 
-    <p>
-      Proper treatment of limits and selection effects is essential
-      for reliable scientific conclusions.
-    </p>
-
-    <h2>Limits of these methods</h2>
-    <p>
-      These methods rely on assumptions about censoring and truncation mechanisms.
-      If assumptions are wrong, results can still be biased.
-    </p>
-
-    <p>
-      Understanding the observational process is essential.
-    </p>
-
+    
     <p>
       <a href="index.html">← Back to Home</a>
     </p>
