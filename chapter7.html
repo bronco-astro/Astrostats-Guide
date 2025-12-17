@@ -64,28 +64,24 @@
   <main>
 
     <p>
-      Regression is about fitting a model to data. Most of the time in this course,
-      the model is a straight line. The goal is to find the line that best represents
+      Regression is about fitting a model to data. Sometimes we like to use linear fit since it's the simplest.
+      Hence, the goal is to find the line that best represents
       the relationship between variables.
     </p>
 
     <p>
-      The fitted line is not exact. It is an approximation that balances all data
+      The fitted line is not exact though. It's more like an approximation that balances all data
       points and accounts for uncertainty and noise.
     </p>
 
     <h2>Lines as models</h2>
     <p>
-      A line in regression is a model for the data.
+      The linear regression model predicts a dependent value based on an independent value plus an error term.
+      The error term represents measurement noise and effects that might not be included in the model.
     </p>
 
     <p>
-      The model predicts a response value based on an explanatory value plus an error term.
-      The error term represents measurement noise and effects that are not included in the model.
-    </p>
-
-    <p>
-      Different models can be used, but the simplest and most common is a straight line.
+       However, even though there are more complicated models, but the simplest and most common is a straight line.
     </p>
 
     <h2>Ordinary least squares (OLS)</h2>
@@ -95,11 +91,11 @@
 
     <p>
       OLS chooses the line that minimizes the sum of squared residuals. A residual is the
-      vertical difference between a data point and the model prediction.
+      vertical difference between a data point and the model prediction, and it can be positive or negative depends on the direction.
     </p>
 
     <p>
-      Squaring the residuals makes large deviations matter more. This means OLS is sensitive
+      Squaring the residuals makes large deviations matter more. Therefore, OLS is sensitive
       to outliers.
     </p>
 
@@ -109,11 +105,8 @@
 
     <h2>Why OLS works</h2>
     <p>
-      OLS can be understood as a geometric problem or as an optimization problem.
-    </p>
-
-    <p>
-      It finds the model parameters that make the predicted values as close as possible
+      OLS can be understood as an optimization problem. Since tt finds the 
+      model parameters that make the predicted values as close as possible
       to the observed data, according to the squared-error measure.
     </p>
 
@@ -121,49 +114,32 @@
       Under certain assumptions, OLS has useful optimal properties.
     </p>
 
-    <h2>Maximum likelihood viewpoint</h2>
+    <h2>Maximum likelihood </h2>
     <p>
       Regression can also be understood using maximum likelihood.
     </p>
 
     <p>
       Instead of minimizing squared residuals directly, maximum likelihood chooses model
-      parameters that make the observed data most probable under an assumed error model.
+      parameters that make the observed data most probable assming me know the error quite well.
+      But changing the assumed error distribution changes the likelihood and can lead to different
+      best-fit models.
     </p>
 
     <p>
-      This provides a more general framework for regression.
+      Maximum Likelihood method provides a more general framework for regression.
     </p>
 
     <h2>Connection between OLS and maximum likelihood</h2>
     <p>
       If the errors are assumed to be independent and normally distributed with constant
-      variance, maximizing the likelihood leads to the same solution as ordinary least squares.
+      variance as little gaussian curve, maximizing the likelihood leads to the same solution as ordinary least squares.
     </p>
-
-    <p>
-      This explains why OLS is so widely used. It is not just a convenient rule, but also a
-      likelihood-based solution under common assumptions.
-    </p>
-
-    <h2>Likelihood function</h2>
-    <p>
-      The likelihood function measures how probable the observed data are for a given set
-      of model parameters.
-    </p>
-
-    <p>
-      In regression, the likelihood depends on the residuals and the assumed error distribution.
-    </p>
-
-    <p>
-      Changing the assumed error distribution changes the likelihood and can lead to different
-      best-fit models.
-    </p>
+    
 
     <h2>Beyond normal errors</h2>
     <p>
-      When errors are not normally distributed, ordinary least squares may no longer be appropriate.
+      When errors are not normally distributed, ordinary least squares may no longer be ideal to implement
     </p>
 
     <p>
@@ -183,7 +159,7 @@
 
     <p>
       Uncertainty in these estimates comes from noise in the data. Likelihood-based methods provide
-      a natural way to quantify this uncertainty.
+      a more natural way to quantify this uncertainty.
     </p>
 
     <p>
